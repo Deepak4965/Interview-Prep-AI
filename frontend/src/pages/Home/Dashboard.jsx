@@ -40,7 +40,7 @@ const Dashboard = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:8001/api/sessions/user/my-session", {
+      const response = await axios.get("https://interview-prep-r1rf.onrender.com/api/sessions/user/my-session", {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -60,7 +60,7 @@ const Dashboard = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:8001/api/sessions/user/${sessionData?._id}`, {
+      await axios.delete(`https://interview-prep-r1rf.onrender.com/api/sessions/user/${sessionData?._id}`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true
       });

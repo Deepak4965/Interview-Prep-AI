@@ -28,7 +28,7 @@ const InterviewPrep = () => {
   const fetchSessionDetailsById = async () => {
     try {
       setIsFetching(true);
-      const res = await axios.get(`http://localhost:8001/api/sessions/user/${sessionId}`, {
+      const res = await axios.get(`https://interview-prep-r1rf.onrender.com/api/sessions/user/${sessionId}`, {
         withCredentials: true,
       });
       if (res.data && res.data.session) {
@@ -53,7 +53,7 @@ const InterviewPrep = () => {
       setOpenLeanMoreDrawer(true);
 
       const response = await axios.post(
-        "http://localhost:8001/api/ai/user/generate-answer",
+        "https://interview-prep-r1rf.onrender.com/api/ai/user/generate-answer",
         {
           question,
           withCredentials: true
@@ -77,7 +77,7 @@ const InterviewPrep = () => {
   const toggleQuestionPinStatus = async (questionId) => {
     try {
       const response = await axios.post(
-        `http://localhost:8001/api/question/user/${questionId}/pin`,
+        `https://interview-prep-r1rf.onrender.com/api/question/user/${questionId}/pin`,
         {},
         { withCredentials: true }
       );
@@ -105,7 +105,7 @@ const InterviewPrep = () => {
 
       // Generate questions using AI
       const aiRes = await axios.post(
-        "http://localhost:8001/api/ai/user/generate-question",
+        "https://interview-prep-r1rf.onrender.com/api/ai/user/generate-question",
         {
           role: sessionData.role,
           experience: sessionData.experience,
@@ -119,7 +119,7 @@ const InterviewPrep = () => {
 
       // Save them in DB (optional, depends on your backend)
       const saveRes = await axios.post(
-        "http://localhost:8001/api/question/user/add",
+        "https://interview-prep-r1rf.onrender.com/api/question/user/add",
         {
           sessionId,
           questions: generatedQuestions,

@@ -52,7 +52,7 @@ const SignUp = ({ setCurrentPage }) => {
         profileImageUrl=imgUploadRes.imageUrl || ""
       }
 
-      const response = await axios.post("http://localhost:8001/api/auth/user/register", {
+      const response = await axios.post("https://interview-prep-r1rf.onrender.com/api/auth/user/register", {
         name: fullName,
         email,
         password,

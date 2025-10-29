@@ -47,7 +47,7 @@ const CreateSessionForm = () => {
 
     try {
       // --- Generate AI Questions ---
-      const aiResponse = await axios.post("http://localhost:8001/api/ai/user/generate-question", {
+      const aiResponse = await axios.post("https://interview-prep-r1rf.onrender.com/api/ai/user/generate-question", {
         ...payload,
         numberOfQuestions: 10,
       }, {
@@ -57,7 +57,7 @@ const CreateSessionForm = () => {
       const generatedQuestions = aiResponse.data;
 
       // --- Create Session ---
-      const response = await axios.post("http://localhost:8001/api/sessions/user/create", {
+      const response = await axios.post("https://interview-prep-r1rf.onrender.com/api/sessions/user/create", {
         ...payload,
         questions: generatedQuestions,
       }, {

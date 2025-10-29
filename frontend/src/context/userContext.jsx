@@ -86,7 +86,7 @@ const UserProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8001/api/auth/user/profile",
+          "https://interview-prep-r1rf.onrender.com1/api/auth/user/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
